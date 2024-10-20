@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import list.Position;
+import queue.LinkedQueue;
+import queue.Queue;
 
 public abstract class AbstractTree<E> implements Tree<E> {
     @Override
@@ -83,6 +85,11 @@ public abstract class AbstractTree<E> implements Tree<E> {
     
     
     
+    
+    
+    
+    
+    
     // PARCOURS PREFIXE
     // return an iterable collection of positions of the tree, reported in preorder
     public Iterable<Position<E>> preorder() {
@@ -102,9 +109,9 @@ public abstract class AbstractTree<E> implements Tree<E> {
     
     
     
+  
     
-    
-    
+   
     // PARCOURS POSTFIXE
     // return an iterable collection of positions of the tree, reported in postorder
     public Iterable<Position<E>> postorder() {
@@ -120,11 +127,41 @@ public abstract class AbstractTree<E> implements Tree<E> {
 		    postorderSubtree( c, snapshot );
 		snapshot.add( p ); // for postorder, we add position p after exploring subtrees
     }
+  
     
     
     
+       
+    // PARCOURS EN LARGEUR 
+    // algorithme de Bread First avec un queue 
+    public Iterable<Position<E>> breadthFirst() {
+		List<Position<E>> snapshot = new ArrayList<>();
+		
+		if (!this.isEmpty()) {	
+			Queue<Position<E>> fringe = new LinkedQueue<>();
+			fringe.enqueue(this.root()); // start by enqueue the root
+			
+			while (!fringe.isEmpty()) {
+				// remove from front of the queue
+				Position<E> p = fringe.dequeue();
+				// report this position
+				snapshot.add(p); 
+			
+				for (Position<E> c : children(p)) {
+					// add all children to the back of queue
+					fringe.enqueue(c);
+				}
+			}
+		}
+		return snapshot;
+	}
     
-   // override positions to make inorder the default for binary trees
-   public Iterable<Position<E>> positions() { return preorder(); }
+    
+   
+    
+   // -----------------------------------------------------------------
+   // override positions iterator for different traversal algorithm
+   // dont forget to change the pretty printing method in LinkedBinaryTree also ;)
+   public Iterable<Position<E>> positions() { return breadthFirst(); }
     
 }

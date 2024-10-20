@@ -211,7 +211,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E>{
     @SuppressWarnings("rawtypes")
 	public String toString() {
 		String s = "{ ";
-		for( Position pos : this.preorder() )
+		for( Position pos : this.breadthFirst() )
 		    s += pos + " ";
 		s += " }";
 		return s;
