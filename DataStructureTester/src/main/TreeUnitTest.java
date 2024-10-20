@@ -34,6 +34,12 @@ public class TreeUnitTest {
 		System.out.println("heightBad : " + tree.heightBad());
 		System.out.println("heightGood : " + tree.heightGood(root));
 		
+		tree.remove(four);
+		System.out.println(tree);
+		tree.remove(one);
+		System.out.println(tree);
+		System.out.println("left of root : " + tree.left(root));
+				
 		System.out.println();
 	}
 	

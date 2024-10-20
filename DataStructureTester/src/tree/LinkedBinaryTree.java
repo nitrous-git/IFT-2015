@@ -152,6 +152,55 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E>{
     
     
     
+    // remove method
+    // remove the node at position p, replace with its child 
+    // can only delete if parent has at most 1 child
+    // return element that has been deleted
+    public E remove(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = this.validate(p);
+		
+		if (numChildren(p) == 2) {
+			throw new IllegalArgumentException("p has 2 children");
+		}
+		
+		Node<E> child = ( node.getLeft() != null ? node.getLeft() : node.getRight() );
+		if (child != null) {
+			// set new parent of child
+			child.setParent(node.getParent()); // child's grandparent becomes parent
+		}
+		
+		if( node == root )
+			// special case, if we delete the root and it has 1 child 
+		    this.root = child; // child becomes root
+		else {
+			Node<E> parent = node.getParent();
+			// on compare le noeud choisi avec le left et right du parent 
+			// pour savoir si il est a left ou right 
+			
+			if ( node == parent.getLeft()) {
+				//set new child of parent
+				parent.setLeft(child);
+			}
+			else {
+				//set new child of parent
+				parent.setRight(child);
+			}
+		}
+		
+		// update variables
+		this.size--;
+		E tmp = node.getElement();
+		node.setElement(null); // garbage collection
+    	node.setElement(null); 
+    	node.setLeft(null); 
+    	node.setRight(null); 
+    	node.setParent( node ); // convention for defunct node
+    	return tmp;
+	}
+    
+    
+    
+    
     
     
     
