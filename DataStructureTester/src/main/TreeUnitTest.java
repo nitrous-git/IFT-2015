@@ -1,6 +1,7 @@
 package main;
 
 import list.Position;
+import tree.ArrayBinaryTree;
 import tree.LinkedBinaryTree;
 import trie.ArrayTrie;
 
@@ -69,6 +70,43 @@ public class TreeUnitTest {
 		System.out.println( arrayTrie.startsWith( "bul" ) ); // true
 		System.out.println( arrayTrie.startsWith( "st" ) ); // true
 		System.out.println( arrayTrie.startsWith( "sl" ) ); // false
+		
+		System.out.println();
+	}
+	
+	public void ArrayBinaryTreeUnitTest() {
+		// --------------------------------------------
+		// -------- ArrayBinaryTree ---------// 
+		// --------------------------------------------
+		System.out.println( "-ArrayBinaryTree Test-" );
+		ArrayBinaryTree<String> tree = new ArrayBinaryTree<String>();
+		
+		tree.addRoot("A");
+		System.out.println(tree);
+		
+		tree.addLeft("B", 0);
+		tree.addRight("C", 0);
+		System.out.println(tree);
+		
+		tree.addLeft("D", 1);
+		tree.addRight("E", 1);
+		System.out.println(tree);
+		
+		tree.addLeft("F", 2);
+		System.out.println(tree);
+		
+		System.out.println("Parent of A : " + tree.parent(0)); // index 0 is A
+		System.out.println("Parent of B : " + tree.parent(1)); // index 1 is B
+		System.out.println("Parent of C : " + tree.parent(2)); // index 2 is C  
+		System.out.println("Parent of D : " + tree.parent(3)); // index 3 is D 
+		System.out.println("Parent of F : " + tree.parent(5)); // index 5 is F, parent should be C 
+		
+		System.out.println("A is a internal : " + tree.isInternal(0)); 
+		System.out.println("A is a leaf/external : " + tree.isExternal(0)); // A is internal 
+		System.out.println("B is a internal : " + tree.isInternal(1)); // B is a leaf
+		System.out.println("D is a leaf/external : " + tree.isExternal(3)); // D is external 
+		System.out.println("D is internal : " + tree.isInternal(3)); 
+		System.out.println("F is a leaf/external : " + tree.isExternal(5)); // F is a leaf
 		
 		System.out.println();
 	}

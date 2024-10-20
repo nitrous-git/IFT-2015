@@ -22,5 +22,5 @@ Inside main you will find the Unitary Test class for each structure type
 -Tree
 	-ArrayTrie
 	-LinkedBinaryTree
-	
+	-BinaryArrayTree
 

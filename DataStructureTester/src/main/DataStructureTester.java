@@ -12,7 +12,7 @@ public class DataStructureTester {
 		TreeUnitTest treeUnitTest = new TreeUnitTest();
 		treeUnitTest.LinkedBinaryTreeUnitTest();
 		treeUnitTest.ArrayTrieUnitTest();
-		
+		treeUnitTest.ArrayBinaryTreeUnitTest();
 		
 		/*
 		StackUnitTest stackUnitTest = new StackUnitTest();
