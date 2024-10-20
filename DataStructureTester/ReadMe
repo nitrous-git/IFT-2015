@@ -1,6 +1,26 @@
-#IFT 2015
+This the DataStructureTester App for all data structure in the class
+Inside main you will find the Unitary Test class for each structure type
 
-Data Structures and Algorithms class at Universite de Montreal
-Date : 2024
-Prof : Francois Major
+# List of all physical implementation
+
+-List
+	-ArrayList
+	-SinglyLinkedList
+	-DoublyLinkedList
+	-CircularlyLinkedList (Doubly)
+	-LinkedPositionalList
+
+-Queue
+	-ArrayQueue
+	-LinkedQueue
+	-LinkedCircularQueue (rotating queue)
+
+-Stack
+	-ArrayStack
+	-LinkedStack
+
+-Tree
+	-ArrayTrie
+	-LinkedBinaryTree
+	
 
