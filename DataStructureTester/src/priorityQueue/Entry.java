@@ -1,4 +1,4 @@
-package PriorityQueue;
+package priorityQueue;
 
 public interface Entry<K, V> {
     K getKey(); // return the key stored in the Entry

@@ -1,6 +1,6 @@
 package main;
 
-import PriorityQueue.HeapPriorityQueue;
+import priorityQueue.HeapPriorityQueue;
 
 public class PriorityQueueUnitTest {
 	 

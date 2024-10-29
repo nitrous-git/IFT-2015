@@ -1,4 +1,4 @@
-package PriorityQueue;
+package priorityQueue;
 
 //manipule des cle valeur de Entry 
 //interface parametrique a deux arguments 
