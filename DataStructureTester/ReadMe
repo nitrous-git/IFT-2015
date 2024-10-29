@@ -15,6 +15,9 @@ Inside main you will find the Unitary Test class for each structure type
 	-LinkedQueue
 	-LinkedCircularQueue (rotating queue)
 
+-Priority Queue
+	-HeapPriorityQueue 
+
 -Stack
 	-ArrayStack
 	-LinkedStack
