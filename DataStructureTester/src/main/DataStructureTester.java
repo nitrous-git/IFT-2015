@@ -14,7 +14,6 @@ public class DataStructureTester {
 		treeUnitTest.ArrayTrieUnitTest();
 		treeUnitTest.ArrayBinaryTreeUnitTest();
 		
-		/*
 		StackUnitTest stackUnitTest = new StackUnitTest();
 		stackUnitTest.ArrayStackUnitTest();
 		stackUnitTest.LinkedStackUnitTest();
@@ -23,6 +22,9 @@ public class DataStructureTester {
 		queueUnitTest.ArrayQueueUnitTest();
 		queueUnitTest.LinkedQueueUnitTest();
 		queueUnitTest.LinkedCircularQueueUnitTest();
-		*/
+	
+		PriorityQueueUnitTest priorityQueueUnitTest = new PriorityQueueUnitTest();
+		priorityQueueUnitTest.HeapPriorityQueueUnitTest();
+		
 	}
 }
