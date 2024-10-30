@@ -8,17 +8,28 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 
     // primary storage in an ArrayList
     protected List<Entry<K,V>> heap = new ArrayList<>();
+    private int size = 0; 
 
     // constructors
     public HeapPriorityQueue() { super(); }
     public HeapPriorityQueue( Comparator<K> comp ) { super( comp ); }
     
+    public HeapPriorityQueue(K[] keys, V[] values) {
+		super();
+		// construct a PQ with given entries
+		for (int i = 0; i < keys.length; i++) {
+			size++;
+			this.heap.add( new PQEntry<>(keys[i], values[i]) );
+		}
+		this.heapify(); // build heap in O(n)
+	}
+    
     // utilities
     protected int parent( int j ) { return ( j-1 ) / 2; } // truncating division (return int)
     protected int left( int j ) { return 2 * j + 1; }
     protected int right( int j ) { return 2 * j + 2; }
-    protected boolean hasLeft( int j ) { return this.left( j ) < this.heap.size(); }
-    protected boolean hasRight( int j ) { return this.right( j ) < this.heap.size(); }
+    protected boolean hasLeft( int j ) { return this.left( j ) < this.size; }
+    protected boolean hasRight( int j ) { return this.right( j ) < this.size; }
 
     // ----------------
 	// developer method 
@@ -65,13 +76,23 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 			j = smallChildIndex; // continue at the smallest child
 		}
 	}
+	
+	// bottom-up transformation of the heap in O(n)
+	public void heapify() {
+		// start at parent of the last entry
+		int startIndex = this.parent(size-1);
+		// loop until the root
+		for (int i = startIndex; i >=0; i--) {
+			this.sink(i);
+		}
+	}
     
 	// -----------------------------------------------------
 	// AbstractPriorityQueue interface implementation method 
 	
 	@Override
 	public int size() {
-		return this.heap.size();
+		return this.size;
 	}
 
     // insert a (key, value) entry and return it in O(log n)
@@ -80,6 +101,7 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 		this.checkKey(k); // key-checking (could throw exception)
 		Entry<K, V> newest = new PQEntry<>(k, v);
 		this.heap.add(newest); // add to the end of the list
+		size++;
 		this.swim(this.heap.size()-1); // swim the newly added entry
 		return newest;
 	}
@@ -101,6 +123,7 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 		Entry<K, V> ret = this.heap.get(0);
 		this.swap( 0, this.heap.size() - 1 ); // exchange first and last entries
 		this.heap.remove( this.size() - 1 ); // and remove it from list
+		size--;
 		this.sink( 0 ); // sink the new root
 		return ret;
 	}
@@ -111,4 +134,17 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
     @Override
     public String toString() { return this.heap.toString(); }
 
+    public void heapSort() {
+    	for (int i = 0; i < heap.size(); i++) {
+    		int min = 0; 
+    		int last = size-1;
+    		this.swap(min, last); 
+    		// reduce size of the heap, the rest of the space is a sorted array 
+    		size--;
+    		this.heapify(); // heapify the new section of the board 
+		}
+    	// reset size after inplace sort
+    	size = this.heap.size();
+	}
+       
 }

@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+
 import priorityQueue.HeapPriorityQueue;
 
 public class PriorityQueueUnitTest {
@@ -32,5 +34,27 @@ public class PriorityQueueUnitTest {
 		System.out.println( "removeMin() " + HPQ.removeMin() );
 		System.out.println( "removeMin() " + HPQ.removeMin() );
 		System.out.println( "isEmpty() " + HPQ.isEmpty() );
+		
+		System.out.println();
+	    String[] value = new String[] { "Flavie" ,"Alice", "Dave", "Bob", "Charlie"};
+	    Integer[] key = new Integer[] {98, 91, 80, 72, 46};
+	    
+		HeapPriorityQueue<Integer, String> HPQ_2 = new HeapPriorityQueue<>(key, value);
+		System.out.println( "Key : "+ Arrays.toString(key) );
+		System.out.println( "Value : "+ Arrays.toString(value) );
+		System.out.println();
+		System.out.println("Constructed heap");
+		System.out.println( "Heap : "+ HPQ_2 );
+		
+		System.out.println();
+		HPQ_2.heapSort();
+		System.out.println("In descending order");
+		System.out.println("After HeapSort : " + HPQ_2);
+		
+		System.out.println();
+		HPQ_2.heapify();
+		System.out.println("Back to heap");
+		System.out.println("After Heapify : " + HPQ_2);
 	}
 }
+ 
