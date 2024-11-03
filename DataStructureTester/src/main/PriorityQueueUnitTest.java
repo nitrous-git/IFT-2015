@@ -2,13 +2,15 @@ package main;
 
 import java.util.Arrays;
 
+import priorityQueue.Entry;
+import priorityQueue.HeapAdaptablePriorityQueue;
 import priorityQueue.HeapPriorityQueue;
 
 public class PriorityQueueUnitTest {
 	 
 	public void HeapPriorityQueueUnitTest() {
 		// --------------------------------------------
-		// -------- ArrayQueue ---------// 
+		// -------- HeapPriorityQueue ---------// 
 		// --------------------------------------------
 		System.out.println();
 		System.out.println("-HeapPriorityQueue Test-");
@@ -55,6 +57,46 @@ public class PriorityQueueUnitTest {
 		HPQ_2.heapify();
 		System.out.println("Back to heap");
 		System.out.println("After Heapify : " + HPQ_2);
+	}
+	
+	public void HeapAdaptablePriorityQueueUnitTest() {
+		// --------------------------------------------
+		// -------- HeapAdaptablePriorityQueue ---------// 
+		// --------------------------------------------
+		System.out.println();
+		System.out.println( "-HeapAdaptablePriorityQueue test-" );
+		HeapAdaptablePriorityQueue<Integer,String> HAPQ = new HeapAdaptablePriorityQueue<>();
+	
+		Entry<Integer,String> e;
+		e = HAPQ.insert( 5, "A" );
+		System.out.println( HAPQ );
+		HAPQ.insert( 9, "C" );
+		System.out.println( HAPQ );
+		HAPQ.insert( 3, "B" );
+		System.out.println( HAPQ );
+		
+		System.out.println();
+		System.out.println( "min() " + HAPQ.min() );
+		HAPQ.remove( e );
+		System.out.println( "remove( " + e + " ) " + HAPQ );
+		
+		System.out.println();
+		e = HAPQ.insert( 7, "D" );
+		System.out.println( HAPQ );
+		HAPQ.replaceKey(e, 8);
+		System.out.println( "replaceKey(e, 8) : "+ HAPQ );
+		HAPQ.replaceKey(e, 1);
+		System.out.println("replaceKey(e, 1) : "+ HAPQ );
+		
+		HAPQ.replaceValue( e, "K" );
+		System.out.println( "replaceValue( e, 'K' ) " + HAPQ );
+		
+		System.out.println();
+		System.out.println( "min() " + HAPQ.min() );
+		System.out.println( "removeMin() " + HAPQ.removeMin() );
+		System.out.println( "removeMin() " + HAPQ.removeMin() );
+		System.out.println( "removeMin() " + HAPQ.removeMin() );
+		System.out.println( "isEmpty() " + HAPQ.isEmpty() );
 	}
 }
  

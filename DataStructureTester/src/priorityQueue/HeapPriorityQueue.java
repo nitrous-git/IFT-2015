@@ -8,7 +8,7 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 
     // primary storage in an ArrayList
     protected List<Entry<K,V>> heap = new ArrayList<>();
-    private int size = 0; 
+    protected int size = 0; 
 
     // constructors
     public HeapPriorityQueue() { super(); }
@@ -121,7 +121,7 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 			return null;
 		}
 		Entry<K, V> ret = this.heap.get(0);
-		this.swap( 0, this.heap.size() - 1 ); // exchange first and last entries
+		this.swap( 0, this.size() - 1 ); // exchange first and last entries
 		this.heap.remove( this.size() - 1 ); // and remove it from list
 		size--;
 		this.sink( 0 ); // sink the new root
