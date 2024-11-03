@@ -17,6 +17,7 @@ Inside main you will find the Unitary Test class for each structure type
 
 -Priority Queue
 	-HeapPriorityQueue 
+	-HeapAdaptablePriorityQueue 
 
 -Stack
 	-ArrayStack
