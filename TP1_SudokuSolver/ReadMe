@@ -1,0 +1,9 @@
+This is the eclipse project for TP1-SudokuSolver 
+@author Olivier Trudel 
+@date 11-12-2024
+
+Solving a Sudoku Board with DFS (Depth First Search) wich is equivalent to the backtracking solution 
+Implemented with a LinkedGeneralTree, the solve algorithm use a Stack to do the DFS 
+
+
+* Will solve any perfect square sudoku board 4x4, 9x9, 16x16, ... 
