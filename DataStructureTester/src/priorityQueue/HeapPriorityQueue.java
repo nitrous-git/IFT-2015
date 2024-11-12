@@ -128,7 +128,6 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 		return ret;
 	}
 	
-	// --
 	// --------------------
     // convert PQ to String
     @Override
