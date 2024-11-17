@@ -2,6 +2,7 @@ package main;
 
 public class DataStructureTester {
 	public static void main(String[] args) {
+		// push
 		
 		/*
 		// List
