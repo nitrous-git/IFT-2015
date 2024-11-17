@@ -1,7 +1,9 @@
 package main;
 
+import map.ChainHashMap;
 import map.Entry;
 import map.Map;
+import map.ProbeHashMap;
 import map.UnsortedTableMap;
 
 public class MapUnitTest {
@@ -42,7 +44,6 @@ public class MapUnitTest {
 		System.out.println( UM );
 		
 		System.out.println();
-		
 	}
 	
 	
@@ -51,12 +52,12 @@ public class MapUnitTest {
 		// -------- ChainHashMap --------// 
 		// ------------------------------//
 		System.out.println("-ChainHashMap Test -");
-		Map<Integer,String> CHM = new UnsortedTableMap<>(); // our Map
+		Map<Integer,String> CHM = new ChainHashMap<>(); // our Map
 		
 		CHM.put(1, "Mazda");
 		CHM.put(2, "Ford");
 		CHM.put(4, "Nissan");
-		System.out.println( CHM );
+		System.out.println( CHM.entrySet().toString() );
 		
 		System.out.println();
 		for (Entry<Integer, String> entry : CHM.entrySet()) {
@@ -75,19 +76,52 @@ public class MapUnitTest {
 		System.out.println();
 		CHM.put(4, "Honda");
 		System.out.println( "get 4 : " + CHM.get(4) );
-		System.out.println( CHM );
+		System.out.println( CHM.entrySet().toString() );
 		
 		CHM.put(8, "Bentley");
-		System.out.println( CHM );
+		System.out.println( CHM.entrySet().toString() );
 		System.out.println( "size : " + CHM.size() );
 		
 		System.out.println();
 		System.out.println( "remove(4) : " + CHM.remove(4) );
-		System.out.println( CHM );
+		System.out.println( CHM.entrySet().toString() );
 		System.out.println( "remove(2) : " + CHM.remove(2) );
 		System.out.println( "remove(1) : " + CHM.remove(1) );
 		System.out.println( "remove(1) : " + CHM.remove(1) );
-		System.out.println( CHM );
+		System.out.println( CHM.entrySet().toString() );
+		
+		System.out.println();
+	}
+	
+	
+	public void ProbeHashMapUnitTest() {
+		// ------------------------------//
+		// -------- ProbeHashMap --------// 
+		// ------------------------------//
+		System.out.println("-ProbeHashMap Test -");
+		Map<Integer,String> PHM = new ProbeHashMap<>(); // our Map
+		
+		PHM.put(1, "Mazda");
+		PHM.put(2, "Ford");
+		PHM.put(4, "Nissan"); 
+		System.out.println( PHM.entrySet().toString() );
+		
+		System.out.println( "get 2 : " + PHM.get(2) );
+		System.out.println( "get 3 : " + PHM.get(3) );
+		System.out.println( "get 4 : " + PHM.get(4) );
+		System.out.println( "size : " + PHM.size() );
+		
+		PHM.put(8, "Bentley");
+		System.out.println( PHM.entrySet().toString() );
+		System.out.println( "size : " + PHM.size() );
+		
+		System.out.println();
+		System.out.println( "remove(4) : " + PHM.remove(4) );
+		System.out.println( PHM.entrySet().toString() );
+		System.out.println( "remove(2) : " + PHM.remove(2) );
+		System.out.println( "remove(1) : " + PHM.remove(1) );
+		System.out.println( "remove(1) : " + PHM.remove(1) );
+		System.out.println( PHM.entrySet().toString() );
 		
 		System.out.println();
 	}

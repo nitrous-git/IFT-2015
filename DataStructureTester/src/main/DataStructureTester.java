@@ -38,6 +38,8 @@ public class DataStructureTester {
 		MapUnitTest mapUnitTest = new MapUnitTest();
 		mapUnitTest.UnsortedMapUnitTest();
 		mapUnitTest.ChainHashMapUnitTest();
+		mapUnitTest.ProbeHashMapUnitTest();
 		
 	}
+	
 }
