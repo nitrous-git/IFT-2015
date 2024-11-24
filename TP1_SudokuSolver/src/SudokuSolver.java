@@ -3,7 +3,7 @@
  * Solver Class for solution of Sudoku grid with arbitrary dimension (perfect square)
  * The solution implements DFS (Depth First search) on the LinkedGeneralTree Class 
  *
- * @author      Olivier Trudel, Benjamin Dorkins
+ * @author      Olivier Trudel, Benjamin Dockins
  * @version     1.0
  * @since       1.0
  */

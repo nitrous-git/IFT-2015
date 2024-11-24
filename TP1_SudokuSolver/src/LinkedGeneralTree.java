@@ -1,3 +1,16 @@
+/**
+ * 
+ * LinkedGeneralTree class with inner Node class
+ * Children are stored in a ArrayList 
+ * 
+ * Based on LinkedBinaryTree, Francois Major 
+ * Based on Goodrich, Tamassia, Goldwasser
+ *
+ * @author      Olivier Trudel, Benjamin Dockins
+ * @version     1.0
+ * @since       1.0
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +55,7 @@ public class LinkedGeneralTree<E> extends AbstractTree<E> {
     // default constructor for an empty tree
     public LinkedGeneralTree() {}
     
-    
-    
+    // --------------------------------------------
     // developer's utilities
     // validate a position and returns its node
     protected Node<E> validate( Position<E> p ) throws IllegalArgumentException {
@@ -59,7 +71,6 @@ public class LinkedGeneralTree<E> extends AbstractTree<E> {
 		return node;
     }
     
-    
 	// --------------------------------------------
     // public update methods
     // place element e at the root of an empty tree, return its position
@@ -70,7 +81,7 @@ public class LinkedGeneralTree<E> extends AbstractTree<E> {
 		return root;
     }
     
-    // create a new right child of position p storing element e, return its position
+    // create a new child of position p storing element e, return its position
     public Position<E> addChild( Position<E> p, E e ) throws IllegalArgumentException {
 		Node<E> parent = this.validate( p );
 		Node<E> child = createNode( e, parent, null );
@@ -79,7 +90,7 @@ public class LinkedGeneralTree<E> extends AbstractTree<E> {
 		return child;
     }
     
-    
+    // AbstractTree method implementation 
     // -----------------------------------------
 	@Override
 	public Position<E> root() {
@@ -120,7 +131,6 @@ public class LinkedGeneralTree<E> extends AbstractTree<E> {
 	public int size() {
 		return this.size;
 	}
-	
 	
     // ---------------------------------------------
     // pretty printing method

@@ -3,7 +3,7 @@
  * Physical implementation of the GameBoard Interface
  * Array of integer type 
  * 
- * @author      Olivier Trudel, Benjamin Dorkins
+ * @author      Olivier Trudel, Benjamin Dockins
  * @version     1.0
  * @since       1.0
  */
