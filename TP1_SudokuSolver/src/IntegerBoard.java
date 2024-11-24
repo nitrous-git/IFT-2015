@@ -1,3 +1,12 @@
+/**
+ * 
+ * Physical implementation of the GameBoard Interface
+ * Array of integer type 
+ * 
+ * @author      Olivier Trudel, Benjamin Dorkins
+ * @version     1.0
+ * @since       1.0
+ */
 
 @SuppressWarnings("hiding")
 public class IntegerBoard<Integer> implements GameBoard<Integer> {
@@ -9,6 +18,8 @@ public class IntegerBoard<Integer> implements GameBoard<Integer> {
 		this.board = board;
 	}
 
+    // GameBoard Interface method
+    // ---------------------------------------------
 	@Override
 	public Integer getCell(int x, int y) throws IndexOutOfBoundsException {
 		return board[y][x];
@@ -29,6 +40,7 @@ public class IntegerBoard<Integer> implements GameBoard<Integer> {
 		return board.length;
 	}
 
+	// Utility for pretty printing
 	@Override
 	public void display() {
 		for (int i = 0; i < getWidth(); i++) {
@@ -40,6 +52,7 @@ public class IntegerBoard<Integer> implements GameBoard<Integer> {
 		System.out.println();
 	}
 	
+	// Board is a square matrix
 	public boolean isSquareMatrix() {
 		return getWidth() == getHeight();
 	}
