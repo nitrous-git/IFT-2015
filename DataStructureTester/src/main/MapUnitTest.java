@@ -4,6 +4,7 @@ import map.ChainHashMap;
 import map.Entry;
 import map.Map;
 import map.ProbeHashMap;
+import map.SortedTableMap;
 import map.UnsortedTableMap;
 
 public class MapUnitTest {
@@ -101,9 +102,9 @@ public class MapUnitTest {
 		System.out.println("-ProbeHashMap Test -");
 		Map<Integer,String> PHM = new ProbeHashMap<>(); // our Map
 		
+		PHM.put(4, "Nissan"); 
 		PHM.put(1, "Mazda");
 		PHM.put(2, "Ford");
-		PHM.put(4, "Nissan"); 
 		System.out.println( PHM.entrySet().toString() );
 		
 		System.out.println( "get 2 : " + PHM.get(2) );
@@ -126,4 +127,36 @@ public class MapUnitTest {
 		System.out.println();
 	}
 	
+	public void SortedTableMapUnitTest() {
+		// ------------------------------//
+		// -------- SortedTableMap --------// 
+		// ------------------------------//
+		System.out.println("-SortedTableMap Test -");
+		Map<Integer,String> SHM = new SortedTableMap<>(); // our Map
+		
+		SHM.put(4, "Nissan"); 
+		SHM.put(1, "Mazda");
+		SHM.put(2, "Ford");
+		System.out.println( SHM.entrySet().toString() );
+		
+		System.out.println( "get 2 : " + SHM.get(2) );
+		System.out.println( "get 3 : " + SHM.get(3) );
+		System.out.println( "get 4 : " + SHM.get(4) );
+		System.out.println( "size : " + SHM.size() );
+		
+		SHM.put(14, "Acura");
+		SHM.put(8, "Bentley");
+		System.out.println( SHM.entrySet().toString() );
+		System.out.println( "size : " + SHM.size() );
+		
+		System.out.println();
+		System.out.println( "remove(4) : " + SHM.remove(4) );
+		System.out.println( SHM.entrySet().toString() );
+		System.out.println( "remove(2) : " + SHM.remove(2) );
+		System.out.println( "remove(1) : " + SHM.remove(1) );
+		System.out.println( "remove(1) : " + SHM.remove(1) );
+		System.out.println( SHM.entrySet().toString() );
+		
+		System.out.println();
+	}
 }

@@ -39,6 +39,7 @@ public class DataStructureTester {
 		mapUnitTest.UnsortedMapUnitTest();
 		mapUnitTest.ChainHashMapUnitTest();
 		mapUnitTest.ProbeHashMapUnitTest();
+		mapUnitTest.SortedTableMapUnitTest();
 		
 	}
 	
