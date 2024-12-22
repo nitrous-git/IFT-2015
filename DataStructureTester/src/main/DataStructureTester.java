@@ -2,8 +2,7 @@ package main;
 
 public class DataStructureTester {
 	public static void main(String[] args) {
-		// up
-		/*
+		
 		// List
 		ListUnitTest listUnitTest = new ListUnitTest();
 		listUnitTest.SinglyUnitTest();
@@ -32,14 +31,13 @@ public class DataStructureTester {
 		PriorityQueueUnitTest priorityQueueUnitTest = new PriorityQueueUnitTest();
 		priorityQueueUnitTest.HeapPriorityQueueUnitTest();
 		priorityQueueUnitTest.HeapAdaptablePriorityQueueUnitTest();
-		*/
 		
 		// Maps 
 		MapUnitTest mapUnitTest = new MapUnitTest();
-		//mapUnitTest.UnsortedMapUnitTest();
-		//mapUnitTest.ChainHashMapUnitTest();
-		//mapUnitTest.ProbeHashMapUnitTest();
-		//mapUnitTest.SortedTableMapUnitTest();
+		mapUnitTest.UnsortedMapUnitTest();
+		mapUnitTest.ChainHashMapUnitTest();
+		mapUnitTest.ProbeHashMapUnitTest();
+		mapUnitTest.SortedTableMapUnitTest();
 		mapUnitTest.SkipListMapUnitTest();
 		
 	}
