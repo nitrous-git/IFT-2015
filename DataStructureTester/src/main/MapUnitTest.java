@@ -4,6 +4,7 @@ import map.ChainHashMap;
 import map.Entry;
 import map.Map;
 import map.ProbeHashMap;
+import map.SkipListMap;
 import map.SortedTableMap;
 import map.UnsortedTableMap;
 
@@ -159,4 +160,31 @@ public class MapUnitTest {
 		
 		System.out.println();
 	}
+	
+	public void SkipListMapUnitTest() {
+		// ------------------------------//
+		// -------- SkipListMap ---------// 
+		// ------------------------------//
+		System.out.println("-SortedTableMap Test -");
+		Map<Integer, String> SLM = new SkipListMap<Integer, String>(Integer.MIN_VALUE, Integer.MAX_VALUE);
+		
+		SLM.put( 12, "A" );
+		System.out.println( SLM );
+		SLM.put( 17, "B" );
+		System.out.println( SLM );
+		SLM.put( 55, "E" );
+		System.out.println( SLM );
+		SLM.put( 50, "D" );
+		System.out.println( SLM );
+		SLM.put( 20, "C" );
+		System.out.println( SLM );
+
+		// series of searches
+		System.out.println("get(25) : " + SLM.get(25) );
+		System.out.println("get(50) : " + SLM.get(50) );
+		SLM.put( 47, "XX" );
+	
+		System.out.println( SLM );
+	}
+	
 }

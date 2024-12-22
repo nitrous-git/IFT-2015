@@ -36,10 +36,11 @@ public class DataStructureTester {
 		
 		// Maps 
 		MapUnitTest mapUnitTest = new MapUnitTest();
-		mapUnitTest.UnsortedMapUnitTest();
-		mapUnitTest.ChainHashMapUnitTest();
-		mapUnitTest.ProbeHashMapUnitTest();
-		mapUnitTest.SortedTableMapUnitTest();
+		//mapUnitTest.UnsortedMapUnitTest();
+		//mapUnitTest.ChainHashMapUnitTest();
+		//mapUnitTest.ProbeHashMapUnitTest();
+		//mapUnitTest.SortedTableMapUnitTest();
+		mapUnitTest.SkipListMapUnitTest();
 		
 	}
 	
