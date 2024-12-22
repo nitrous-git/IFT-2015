@@ -1,0 +1,95 @@
+{
+  "Task 1 and 2" : {
+    "Graph Representation" : {
+      "Cost Matrix" : [ {
+        "City" : "City 1",
+        "Warehouses 101" : 37.58,
+        "Warehouses 102" : 76.66,
+        "Warehouses 103" : 110.15
+      }, {
+        "City" : "City 2",
+        "Warehouses 101" : 27.86,
+        "Warehouses 102" : 61.77,
+        "Warehouses 103" : 95.29
+      }, {
+        "City" : "City 3",
+        "Warehouses 101" : 36.22,
+        "Warehouses 102" : 72.12,
+        "Warehouses 103" : 105.34
+      } ]
+    },
+    "Ressource Allocation" : [ {
+      "City" : "City 1",
+      "Priority" : "High",
+      "Allocated" : [ {
+        "Units" : 50,
+        "Warehouse" : "Warehouse 101"
+      } ]
+    }, {
+      "City" : "City 2",
+      "Priority" : "Medium",
+      "Allocated" : [ {
+        "Units" : 30,
+        "Warehouse" : "Warehouse 101"
+      } ]
+    }, {
+      "City" : "City 3",
+      "Priority" : "Low",
+      "Allocated" : [ {
+        "Units" : 30,
+        "Warehouse" : "Warehouse 102"
+      }, {
+        "Units" : 20,
+        "Warehouse" : "Warehouse 101"
+      } ]
+    } ],
+    "Remaining Capacities" : {
+      "Warehouse 101" : 0,
+      "Warehouse 102" : 20,
+      "Warehouse 103" : 110
+    }
+  },
+  "Task 3" : {
+    "Transfers" : [ {
+      "From " : "Warehouse 103",
+      "To " : "Warehouse 101",
+      "Units " : 50
+    }, {
+      "From " : "Warehouse 103",
+      "To " : "Warehouse 102",
+      "Units " : 10
+    } ],
+    "Final Resource Levels " : {
+      "Warhouse 101" : 50,
+      "Warhouse 102" : 30,
+      "Warhouse 103" : 50
+    }
+  },
+  "Task 4" : {
+    "Initial Clusters" : {
+      "City 1" : "Cluster 1",
+      "City 2" : "Cluster 2",
+      "City 3" : "Cluster 3"
+    },
+    "Merging Steps" : [ {
+      "Action" : "Merge",
+      "Cities" : [ "City 1", "City 2" ],
+      "Cluster After Merge" : "Cluster 1"
+    } ],
+    "Cluster Membership After Merging" : {
+      "City 1" : "Cluster 1",
+      "City 2" : "Cluster 1",
+      "City 3" : "Cluster 3"
+    },
+    "Queries" : [ {
+      "Query" : "Are City 1 and City 2 in the same cluster?",
+      "Result" : "Yes"
+    }, {
+      "Query" : "Are City 1 and City 3 in the same cluster?",
+      "Result" : "No"
+    }, {
+      "Query" : "Are City 2 and City 3 in the same cluster?",
+      "Result" : "No"
+    } ]
+  }
+}
