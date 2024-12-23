@@ -47,6 +47,7 @@ public class FileUtil {
                     }
                 }
             }
+	//Catch cases off original try	
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
