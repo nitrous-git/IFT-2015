@@ -18,7 +18,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 	List<Vertex<V>> vertices;
 	Edge<E>[][] adjacencyMatrix;
 	
-	// Construct an empty graph.
+	// Construct an empty graph using the adjacency matrix format
 	@SuppressWarnings("unchecked")
 	public AdjacencyMatrixGraph(int size){		
 		vertices = new ArrayList<Vertex<V>>();
@@ -115,11 +115,11 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 		newVertex.setIndex(vertices.indexOf(newVertex));
 		return newVertex;
 	}
-
+	// For city/warehouse and warehouse/city
 	@Override
 	public Edge<E> insertEdge(Vertex<V> city, Vertex<V> warehouse, E element) throws IllegalArgumentException {
 		InnerEdge<E> newEdge = new InnerEdge<E>(city, warehouse);
-		InnerVertex<V> IVc = (InnerVertex<V>)city;
+		InnerVertex<V> IVc = (InnerVertex<V>)city;        
 		InnerVertex<V> IVw = (InnerVertex<V>)warehouse;
 	
 		adjacencyMatrix[IVw.getIndex()][IVc.getIndex()] = newEdge; //newEdge.getCost();
@@ -134,7 +134,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 		for(int i = 0; i < adjacencyMatrix.length - warehouseSize; i++) {
 			for(int j = citySize; j < adjacencyMatrix[i].length; j++) {
 				InnerEdge<E> IE = (InnerEdge<E>) adjacencyMatrix[i][j];
-				temp[i][j - citySize] = IE.getCost();
+				temp[i][j - citySize] = IE.getCost();   // cost matrix
 			}
 		}
 		return temp;
@@ -151,7 +151,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 		}
 		return temp;
 	}
-		
+	//Vertex index using previous function 	
 	public int findVertexIndex(NetworkSetup ns) {
 		return findVertex(ns).getIndex();
 	}
@@ -225,7 +225,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 		
 		return m;
 	}
-	
+	// Warehouse elemnts
 	public List<Warehouse> getWarehouse(int citySize) {
 		List<Warehouse> temp = new ArrayList<>();
 		for (int i = citySize; i < vertices.size(); i++) {
@@ -233,7 +233,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 		}
 		return temp;
 	}
-	
+	//city elements
 	public List<City> getCities(int citySize){
 		List<City> temp = new ArrayList<>();
 		for (int i = 0; i < citySize; i++) {
@@ -257,7 +257,7 @@ public class AdjacencyMatrixGraph<V,E> extends AbstractGraph<V,E> {
 			System.out.println();
 		}
 	}
-	
+	// Prints cost matrix associated with city and warehouse sizes
 	public void printCostMatrix(int citySize, int warehouseSize) {
 		System.out.println("Graph representation (Cost Matrix) : ");
 		System.out.print("cities | ");
