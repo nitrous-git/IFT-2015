@@ -74,7 +74,7 @@ public class ResourceRedistribution {
             }
         }
     }
-    
+    //Returns final
     public void printFinalResource() {
     	finalCapacityNode = mapper.createObjectNode();
         // Print final resource levels
@@ -84,7 +84,7 @@ public class ResourceRedistribution {
     		finalCapacityNode.put("Warhouse " + warehouse.id, warehouse.capacity);
         }
 	}
-    
+    //JSON convert
     public ObjectNode convertTask3ToJson() {
     	ObjectNode task3 = mapper.createObjectNode();
     	task3.set("Transfers", transfersJSONList);
