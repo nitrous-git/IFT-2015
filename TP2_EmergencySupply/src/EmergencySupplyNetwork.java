@@ -35,7 +35,7 @@ public class EmergencySupplyNetwork {
 	    }
 	}//------------ end of InnerEdge class ------------
 	
-    
+    //Graph Builder
     public void buildGraph() {
         // add all vertex to graph 
         for (NetworkSetup c : cities) { G.insertVertex(c); }
@@ -48,7 +48,7 @@ public class EmergencySupplyNetwork {
     		}
     	} 
 	}
-    
+    //Returns Graph
     public AdjacencyMatrixGraph<NetworkSetup, Double> getGraph() {
 		return this.G;
 	}
