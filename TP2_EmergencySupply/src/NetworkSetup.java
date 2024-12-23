@@ -1,7 +1,7 @@
 // parent class for city and warehouses
 public class NetworkSetup {
     int id, x, y, capacity;
-
+   //Constructor
     public NetworkSetup(int id, int x, int y) {
         this.id = id;
         this.x = x;
